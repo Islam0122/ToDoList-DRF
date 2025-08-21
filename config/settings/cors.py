@@ -1,4 +1,3 @@
-
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
@@ -20,6 +19,7 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://127\.0\.0\.1(:\d+)?$",  # Разрешить все порты для 127.0.0.1

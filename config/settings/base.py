@@ -24,9 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'drf_yasg',
-
+    'drf_spectacular',
     #apps
+    'apps.tasks',
 
 
 ]
@@ -87,19 +87,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # --- DRF ---
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
     ],
 }
 
 from .cors import *
 
 JAZZMIN_SETTINGS = {
-    "site_title": "HeartVibe",  # Заголовок сайта
-    "site_header": "Админка HeartVibe",  # Заголовок на главной странице админки
-    "site_brand": "HeartVibe",  # Логотип или название бренда на странице
-    "welcome_sign": "Добро пожаловать в админку HeartVibe!",  # Приветственное сообщение
+    "site_title": "ToDoList",
+    "site_header": "Админка ToDoList",
+    "site_brand": "ToDoList",
+    "welcome_sign": "Добро пожаловать в админку ToDoList!",
     "topmenu_links": [
         {"name": "Главная", "url": "/admin/", "permissions": ["auth.view_user"]},
     ],
